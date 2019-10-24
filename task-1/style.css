@@ -1,0 +1,31 @@
+* {
+    color: #444;
+    font-size: 30px;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.top-menu {
+    height: 200px;
+    width: 100%;
+    background: #ccc;
+}
+
+.left-bar {
+    width: 300px;
+    height: 600px;
+    background: #aaa;
+}
+
+.center-block {
+    width: calc(100% - 300px);
+    height: 500px;
+    background: #eee;
+}
+
+.bottom-block {
+    margin: auto;
+}

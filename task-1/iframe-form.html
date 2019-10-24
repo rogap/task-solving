@@ -1,0 +1,116 @@
+<style>
+    /* Стили формы --> */
+
+    .integration-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+
+    .integration-form__wrapper {
+        border: 1px solid black;
+        max-width: 300px;
+        flex-grow: 1;
+    }
+
+    .integration-form__item {
+        padding: 10px 10% 24px 10%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .integration-form__label {
+        display: block;
+        font-size: .8em;
+    }
+
+    .integration-form__input {
+        padding: 8px 16px;
+    }
+
+
+    /* Классы ошибки полей --> */
+    /* Примечание:
+     * Класс должен быть установлен к "integration-form__item" для применения стилей ошибки
+     */
+
+    .err-input .integration-form__input {
+        border-color: red;
+    }
+
+    .err-input__text {
+        margin: 0px;
+        color: red;
+        font-size: .9em;
+        display: none;
+    }
+
+    .err-input .err-input__text {
+        display: block;
+    }
+
+
+    /* Адаптация формы --> */
+
+    @media (min-width: 639px) {
+        .integration-form__wrapper {
+            max-width: 639px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .integration-form__item {
+            padding: 10px 0% 24px 4%;
+            width: 44%;
+        }
+    }
+
+
+    @media (min-width: 1024px) {
+        .integration-form__wrapper {
+            max-width: 1024px;
+        }
+
+        .integration-form__item {
+            padding: 10px 0% 24px 2%;
+            width: 30%;
+        }
+    }
+
+
+    @media (min-width: 1600px) {
+        .integration-form__wrapper {
+            max-width: 1600px;
+        }
+
+        .integration-form__item {
+            padding: 10px 0% 24px 32px;
+            width: 480px;
+        }
+    }
+</style>
+
+
+<div class="integration-form">
+    <form class="integration-form__wrapper">
+        <div class="integration-form__item err-input">
+            <label class="integration-form__label">* Фамилия</label>
+            <input class="integration-form__input" type="text" placeholder="Фамилия">
+            <p class="err-input__text">Обязательное поле</p>
+        </div>
+        <div class="integration-form__item">
+            <label class="integration-form__label">* Имя</label>
+            <input class="integration-form__input" type="text" placeholder="Имя">
+            <p class="err-input__text">Обязательное поле</p>
+        </div>
+        <div class="integration-form__item">
+            <label class="integration-form__label">Отчество</label>
+            <input class="integration-form__input" type="text" placeholder="Отчество">
+        </div>
+    </form>
+</div>
