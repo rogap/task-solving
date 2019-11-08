@@ -8,8 +8,30 @@ function formatCity(cityList) {
 }
 
 
-function roundingToFIve() {
-    //
+/**
+ * Округляет число до пятерок
+ * @param {Number} [num] - округляемое число
+ * @return {Number}
+ */
+function roundingToFIve(num) {
+    num += "" // делаем строкой
+    let left = num, right
+    const index = num.indexOf('.')
+
+    if (index != -1) {
+        right =  Math.round( num.slice(index) )
+        left = +num.slice(0, index) + +right
+        left += ''
+    }
+
+    const g = left.slice(-1)
+    if (g < 3) {
+        return +`${left.slice(0, -1)}0`
+    } else if (g < 8) {
+        return +`${left.slice(0, -1)}5`
+    } else {
+        return +`${+left.slice(0, -1) + 1}0`
+    }
 }
 
 
@@ -34,6 +56,16 @@ function declension(num) {
 }
 
 
+/**
+ * Проверяет является ли число простым
+ * @param {Number} [num] - проверяет является ли число простым
+ * @return {Boolean}
+ */
 function checkSimpleNum(num) {
-    //
+    let iteration = num < 9 ? num : 9
+
+    while(--iteration > 1) {
+        if (num % iteration === 0) return false
+    }
+    return true
 }
